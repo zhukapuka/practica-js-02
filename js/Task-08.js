@@ -1,24 +1,16 @@
-// Напишіть функцію min(a, b), яка приймає 2 числа і повертає меньше з них.
-// Потрібно додати перевірку, що функція отримує саме числа, в іншому випадку
-// повертати з функції рядок - 'Not a number!'.
+// Є об'єкт, в якому зберігаються зарплати команди
+// Напишіть код для додавання усіх зарплат та
+// збережіть його результат в змінній sum.
+// Якщо об'єкт salaries пустий, то результат має бути 0
 
-function min(a, b) {
-  if (typeof a === "number" && typeof b === "number") {
-    if (a > b) {
-      return b;
-    } else {
-      return a;
-    }
-  } else {
-    return "Not a nubmer";
-  }
+const salaries = {
+  Mango: 100,
+  Poly: 160,
+  Ajax: 1470,
+};
+const allSalaries = Object.values(salaries);
+let sum = 0;
+for (const selery of allSalaries) {
+  sum += selery;
 }
-console.log(min(6, 2));
-
-// 2
-function min2(a, b) {
-  return typeof a !== "number" || typeof b !== "number"
-    ? "Not a number!"
-    : Math.min(a, b);
-}
-console.log(min2(69, 52));
+console.log(sum || 0);
